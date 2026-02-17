@@ -1,2 +1,42 @@
-# expense-tracker-web
-A Flask-based Expense Tracker Web Application with user authentication and session management. Users can register, log in, and manage expenses with add, edit, and delete features. The system provides category-wise summaries and secure file-based data storage using a clean and professional interface.
+\#  Expense Tracker Web App
+
+
+
+A professional Flask-based Expense Tracker with:
+
+
+
+\- User Authentication
+
+\- Add / Edit / Delete Expenses
+
+\- Category Summary
+
+\- Multi-user Support
+
+\- File-based Storage
+
+
+
+\##  Tech Stack
+
+\- Python
+
+\- Flask
+
+\- HTML
+
+\- CSS
+
+\- Chart.js
+
+
+
+\##  Run Locally
+
+pip install flask
+
+python app.py
+
+
+
