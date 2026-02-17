@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add Expense</h2>
+
+<form method="POST">
+    <label>Date:</label>
+    <input type="date" name="date" required>
+
+    <label>Category:</label>
+    <input type="text" name="category" required>
+
+    <label>Amount:</label>
+    <input type="number" step="0.01" name="amount" required>
+
+    <label>Description:</label>
+    <input type="text" name="description" required>
+
+    <button type="submit">Add Expense</button>
+</form>
+
+{% endblock %}

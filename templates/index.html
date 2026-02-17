@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>All Expenses</h2>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Actions</th>   <!-- Added -->
+    </tr>
+
+    {% for e in expenses %}
+    <tr>
+        <td>{{ e.date }}</td>
+        <td>{{ e.category }}</td>
+        <td>₹ {{ e.amount }}</td>
+        <td>{{ e.description }}</td>
+        <td>
+            <a href="{{ url_for('edit_expense', id=e.id) }}">✏ Edit</a>
+            |
+            <a href="{{ url_for('delete_expense', id=e.id) }}"
+               onclick="return confirm('Are you sure?');">
+               🗑 Delete
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Total: ₹ {{ total }}</h3>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Expense Summary</h2>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Total</th>
+    </tr>
+
+    {% for category, total in category_data.items() %}
+    <tr>
+        <td>{{ category }}</td>
+        <td>₹ {{ total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<canvas id="pieChart" style="max-width:400px; margin-top:30px;"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const labels = {{ category_data.keys()|list|tojson }};
+const values = {{ category_data.values()|list|tojson }};
+
+new Chart(document.getElementById('pieChart'), {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: values
+        }]
+    }
+});
+</script>
+
+{% endblock %}
