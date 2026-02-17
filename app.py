@@ -15,7 +15,6 @@ for file in [USER_FILE, EXPENSE_FILE]:
         open(file, "w").close()
 
 
-# ---------------- READ EXPENSES ----------------
 def read_expenses():
     expenses = []
     with open(EXPENSE_FILE, "r") as f:
@@ -38,7 +37,6 @@ def read_expenses():
     return expenses
 
 
-# ---------------- HOME ----------------
 @app.route("/")
 def home():
     if "user" not in session:
@@ -50,7 +48,6 @@ def home():
     return render_template("index.html", expenses=expenses, total=total)
 
 
-# ---------------- REGISTER ----------------
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -71,7 +68,6 @@ def register():
     return render_template("register.html")
 
 
-# ---------------- LOGIN ----------------
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -90,14 +86,12 @@ def login():
     return render_template("login.html")
 
 
-# ---------------- LOGOUT ----------------
 @app.route("/logout")
 def logout():
     session.pop("user", None)
     return redirect("/login")
 
 
-# ---------------- ADD EXPENSE ----------------
 @app.route("/add", methods=["GET", "POST"])
 def add_expense():
     if "user" not in session:
@@ -118,7 +112,6 @@ def add_expense():
     return render_template("add_expense.html")
 
 
-# ---------------- DELETE ----------------
 @app.route("/delete/<id>")
 def delete_expense(id):
     if "user" not in session:
@@ -136,7 +129,6 @@ def delete_expense(id):
     return redirect("/")
 
 
-# ---------------- EDIT ----------------
 @app.route("/edit/<id>", methods=["GET", "POST"])
 def edit_expense(id):
     if "user" not in session:
@@ -165,7 +157,6 @@ def edit_expense(id):
     return render_template("edit_expense.html", expense=expense)
 
 
-# ---------------- SUMMARY + PIE CHART ----------------
 @app.route("/summary")
 def summary():
     if "user" not in session:
