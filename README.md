@@ -1,4 +1,4 @@
-\#  Expense Tracker Web App
+#  Expense Tracker Web App
 
 
 
@@ -18,7 +18,7 @@ A professional Flask-based Expense Tracker with:
 
 
 
-\##  Tech Stack
+##  Tech Stack
 
 \- Python
 
@@ -32,7 +32,7 @@ A professional Flask-based Expense Tracker with:
 
 
 
-\##  Run Locally
+##  Run Locally
 
 pip install flask
 
